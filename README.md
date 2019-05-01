@@ -1,3 +1,4 @@
+[![Go Report Card](https://goreportcard.com/badge/github.com/aaronedell/deleto)](https://goreportcard.com/report/github.com/aaronedell/deleto)
 # deleto
 
 Randomly delete files from a directory.
