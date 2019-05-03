@@ -1,3 +1,4 @@
+![deleto logo](https://github.com/aaronedell/deleto/blob/master/deleto.png)
 [![Go Report Card](https://goreportcard.com/badge/github.com/aaronedell/deleto)](https://goreportcard.com/report/github.com/aaronedell/deleto)
 # deleto
 
