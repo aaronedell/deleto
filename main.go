@@ -6,12 +6,14 @@ import (
 	"log"
 	"math/rand"
 	"os"
+	"path/filepath"
 	"time"
 
 	pb "gopkg.in/cheggaaa/pb.v1"
 )
 
 func main() {
+	rand.Seed(time.Now().UnixNano())
 	var (
 		dir = flag.String("dir", ".", "source of files to delete")
 		num = flag.Int("num", 123, "number of files to delete")
@@ -26,7 +28,7 @@ func main() {
 	totaldeleted := 0
 	for i := 0; i < *num; i++ {
 		rando := randO(1, total)
-		selectedfile := *dir + files[rando].Name()
+		selectedfile := filepath.Join(*dir, files[rando].Name())
 		if _, err := os.Stat(selectedfile); err == nil {
 			try := os.Remove(selectedfile)
 			if try != nil {
@@ -45,7 +47,6 @@ func main() {
 }
 
 func randO(min, max int) int {
-	rand.Seed(time.Now().UnixNano())
 	randomnumber := rand.Intn(max-min) + min
 	return randomnumber
 }
