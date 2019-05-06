@@ -16,7 +16,7 @@ func main() {
 	rand.Seed(time.Now().UnixNano())
 	var (
 		dir = flag.String("dir", ".", "source of files to delete")
-		num = flag.Int("num", 123, "number of files to delete")
+		num = flag.Int("num", 0, "number of files to delete")
 	)
 	flag.Parse()
 	files, err := ioutil.ReadDir(*dir)
