@@ -24,6 +24,9 @@ func main() {
 		log.Fatal(err)
 	}
 	total := len(files)
+	if *num > total {
+		log.Fatalf("No, please don't try to delete %d files from a directory that only has %d files in it.", *num, total)
+	}
 	bar := pb.StartNew(*num)
 	totaldeleted := 0
 	for i := 0; i < *num; i++ {
